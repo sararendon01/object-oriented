@@ -1,5 +1,7 @@
 <?php
-namespace Deepdivedylan\DataDesign;
+namespace sararendon01\ObjectOriented;
+use InvalidArgumentException;
+
 /**
  * Trait to Validate a mySQL Date
  *
@@ -18,7 +20,7 @@ trait ValidateDate {
 	 * @param \DateTime|string $newDate date to validate
 	 * @return \DateTime DateTime object containing the validated date
 	 * @see http://php.net/manual/en/class.datetime.php PHP's DateTime class
-	 * @throws \InvalidArgumentException if the date is in an invalid format
+	 * @throws InvalidArgumentException if the date is in an invalid format
 	 * @throws \RangeException if the date is not a Gregorian date
 	 * @throws \TypeError when type hints fail
 	 **/
@@ -30,7 +32,7 @@ trait ValidateDate {
 		// treat the date as a mySQL date string: Y-m-d
 		$newDate = trim($newDate);
 		if((preg_match("/^(\d{4})-(\d{2})-(\d{2})$/", $newDate, $matches)) !== 1) {
-			throw(new \InvalidArgumentException("date is not a valid date"));
+			throw(new InvalidArgumentException("date is not a valid date"));
 		}
 		// verify the date is really a valid calendar date
 		$year = intval($matches[1]);
@@ -51,7 +53,7 @@ trait ValidateDate {
 	 * @param mixed $newDateTime date to validate
 	 * @return \DateTime DateTime object containing the validated date
 	 * @see http://php.net/manual/en/class.datetime.php PHP's DateTime class
-	 * @throws \InvalidArgumentException if the date is in an invalid format
+	 * @throws InvalidArgumentException if the date is in an invalid format
 	 * @throws \RangeException if the date is not a Gregorian date
 	 * @throws \TypeError when type hints fail
 	 * @throws \Exception if some other error occurs
@@ -69,7 +71,7 @@ trait ValidateDate {
 			list($second, $microseconds) = explode(".", $second);
 			$date->setTime($hour, $minute, $second, $microseconds);
 			return($date);
-		} catch(\InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
+		} catch(InvalidArgumentException | \RangeException | \Exception | \TypeError $exception) {
 			$exceptionType = get_class($exception);
 			throw(new $exceptionType($exception->getMessage(), 0, $exception));
 		}
@@ -82,7 +84,7 @@ trait ValidateDate {
 	 * @param string $newTime time to validate
 	 * @return string validated time as a string H:i:s[.u]
 	 * @see http://php.net/manual/en/class.datetime.php PHP's DateTime class
-	 * @throws \InvalidArgumentException if the date is in an invalid format
+	 * @throws InvalidArgumentException if the date is in an invalid format
 	 * @throws \RangeException if the date is not a Gregorian date
 	 **/
 	private static function validateTime(string $newTime) : string {

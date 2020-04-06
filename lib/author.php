@@ -1,21 +1,33 @@
-
-
+<?php
+//require_once("/etc/apache2/capstone-mysql/Secrets.php");
+//$secrets =  new Secrets("/etc/apache2/capstone-mysql/cohort28/fgallegos8.ini");
+//$pdo = $secrets->getPdoObject();
 //require_once("/etc/apache2/capstone-mysql/Secrets.php");
 
-require_once(dirname(__DIR__, 1) . "/classes/author.php");
+require_once (dirname(__DIR__,1)."/Classes/Author.php");
 //use Author;
-function bar() {
-use ValidateUuid;
+$password = "$\skull_skunk_%year";
+$authorHash = password_hash($password, PASSWORD_ARGON2I, ["time_cost" => 45]);
+//$authorHash = "hash1235676ghg91gothamhash";
 
- 	$authorId; = "7b638665-773f-4474-a692-6402c3539b66";
- 	$authorActivationToken; = "o7AFoTGE9xjQiHQK6dAa";
- 	$authorAvatarUrl; = "https://avatars.discourse.org/v4/letters/m/a8b319/45.png";
- 	$authorEmail; = "sararendon29@gmail.com";
- 	$authorHash; = "1234hsrendon75ighowfangvhg";
-	$authorUsername; = "SaraRendon01"
+$authorId = "3134e90a-e3a5-4df2-abff-7cc7d8324530";
 
-	$author = new Author($newauthorId, $newAuthorActivationToken, string $newAvatarUrl, $newAuthorEmail, $newAuthorHash, $newAuthorUsername);
- echo var_dump($author);
-echo "$authorEmail <br> authorActivationToken <br> $authorHash ";
-}
-bar();
+$authorActivationToken = 'o9AbabiSlayerjkGE9xo9ZFoTGE9x750';
+
+$authorAvatarUrl = "https://avars.discourse.org/v4/letter/m/a8b319/squad4.png";
+
+$authorUsername = "Andre3000";
+
+$authorEmail = "Aundre@cnm.edu";
+
+$author = new sararendon01\ObjectOriented\Author($authorId, $authorActivationToken, $authorAvatarUrl, $authorEmail, $authorHash, $authorUsername);
+var_dump($author);
+//$author->insert($pdo);
+//$authors = Author::getAllAuthor($pdo);
+//$authors =  $author->getAllAuthor($pdo);
+//var_dump($authors);
+//$author->delete($pdo);
+//Author::getAllAuthor($pdo);
+//$author->getAuthor $authorId);
+//$authors->getAllAuthor($pdo);
+//var_dump($author->getAuthor($pdo, $authorId));
