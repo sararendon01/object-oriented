@@ -4,7 +4,7 @@
 //$pdo = $secrets->getPdoObject();
 //require_once("/etc/apache2/capstone-mysql/Secrets.php");
 
-require_once (dirname(__DIR__,1)."/Classes/Author.php");
+require_once (dirname(__DIR__, 1) . "/Classes/Author.php");
 //use Author;
 $password = "$\skull_skunk_%year";
 $authorHash = password_hash($password, PASSWORD_ARGON2I, ["time_cost" => 45]);
