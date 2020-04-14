@@ -84,7 +84,7 @@ class Author implements \JsonSerializable {
 			throw(new $exceptionType($exception->getMessage(), 0, $exception));
 		}
 		$this->authorId = $uuid;
-		echo "$uuid";
+
 
 	}
 
