@@ -1,5 +1,5 @@
 <?php
-namespace sararendon01\ObjectOriented;
+namespace SaraRendon01\ObjectOriented;
 use InvalidArgumentException;
 
 /**

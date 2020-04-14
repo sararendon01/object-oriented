@@ -1,7 +1,7 @@
 <?php
-namespace DeepDiveDylan\DataDesign\Test;
+namespace SaraRendon01\ObjectOriented\Test;
 
-use sararendon01\ObjectOriented\n\{Profile, Tweet};
+use SaraRendon01\ObjectOriented\{Author};
 
 //Hack!!! - added so this class could see DataBase
 require_once(dirname(__DIR__). "/Test/DataDesignTest.php");

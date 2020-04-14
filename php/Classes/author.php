@@ -1,5 +1,5 @@
 <?php
-namespace SaraRendon01/ObjectOriented;
+namespace SaraRendon01\ObjectOriented;
 
 require_once("autoload.php");
 require_once(dirname(__DIR__) . "/vendor/autoload.php");

@@ -1,5 +1,5 @@
 <?php
-namespace sararendon01\ObjectOriented\Test;
+namespace SaraRendon01\ObjectOriented\Test;
 
 use PHPUnit\Framework\TestCase;
 use PHPUnit\DbUnit\TestCaseTrait;
