@@ -18,7 +18,7 @@ $authorAvatarUrl = "https://avars.discourse.org/v4/letter/m/a8b319/squad4.png";
 
 $authorUsername = "Andre3000";
 
-$authorEmail = "Aundre@cnm.edu";
+$authorEmail = "Srendon4@cnm.edu";
 
 $author = new sararendon01\ObjectOriented\Author($authorId, $authorActivationToken, $authorAvatarUrl, $authorEmail, $authorHash, $authorUsername);
 var_dump($author);
